@@ -1,0 +1,33 @@
+#include<stdio.h>
+int main()
+{
+    long long int a[1000000],i,n,m,j,k,c[1000000][3],d,e,f;
+    scanf("%lld %lld",&n,&m);
+    for(i=0;i<n;i++)
+    {
+        a[i]=0;
+    }
+    for(i=0;i<m;i++)
+    {
+        for(j=0;j<3;j++)
+        {
+            scanf("%lld",&c[i][j]);
+        }
+        d=c[i][0];
+        e=c[i][1];
+        f=c[i][2];
+        for(k=d;k<=e;k++)
+        {
+            a[k]=a[k]+f;
+        }
+    }
+    long long int max=a[0];
+    for(i=1;i<n;i++)
+    {
+        if(max<a[i])
+        {
+            max=a[i];
+        }
+    }
+    printf("%lld",max);
+}
