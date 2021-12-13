@@ -1,0 +1,27 @@
+#include<stdio.h>
+int main()
+{
+    long int a[2000000],b,c,i,j,count=0;
+    scanf("%ld",&b);
+    for(i=0;i<b;i++)
+    {
+        scanf("%ld",&a[i]);
+    }
+    for(i=0;i<b-1;i++)
+    {
+        c=a[i];
+        for(j=i+1;j<b;j++)
+        {
+            if(c>a[j])
+            {
+               c=a[j];
+               a[j]=a[i];
+               a[i]=c;
+               count=count+1; 
+            }
+        }
+    }
+    printf("Array is sorted in %ld swaps.\n",count);
+    printf("First Element: %ld\n",a[0]);
+    printf("Last Element: %ld\n",a[b-1]);
+}
